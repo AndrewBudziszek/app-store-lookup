@@ -15,7 +15,7 @@ export default class LookupForm extends React.Component {
     }
   
     handleChange(event) {
-        this.setState({value: event.target.value});
+        this.setState({appId: event.target.value});
     }
   
     async handleSubmit(event) {
