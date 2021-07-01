@@ -34,7 +34,7 @@ export default class LookupForm extends React.Component {
           </label>
           <input type="submit" value="Submit" />
           <p>
-              App Info:<br/> {this.state.appInfo}
+              App Info:<br/> {`${this.state.appInfo}`}
           </p>
         </form>
       );
