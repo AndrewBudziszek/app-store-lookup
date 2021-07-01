@@ -1,12 +1,12 @@
 import React from "react";
-import axios from 'axios';
+import { CodeBlock } from '@atlaskit/code';
 var store = require('app-store-scraper');
 
 export default class LookupForm extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-          appId: '',
+          appId: '553834731',
           appInfo: ''
         };
   
@@ -27,16 +27,22 @@ export default class LookupForm extends React.Component {
   
     render() {
       return (
+          <>
         <form onSubmit={this.handleSubmit}>
           <label>
             App Id<br/>
             <input type="text" value={this.state.value} onChange={this.handleChange} />
           </label>
           <input type="submit" value="Submit" />
-          <p>
-              App Info:<br/> {`${this.state.appInfo}`}
-          </p>
         </form>
+        <div className='smallerText'>
+              <CodeBlock 
+                text={`${JSON.stringify(this.state.appInfo, null, 4)}`}
+                language={'json'}
+                showLineNumbers={false}
+              />
+          </div>
+        </>
       );
     }
   }
