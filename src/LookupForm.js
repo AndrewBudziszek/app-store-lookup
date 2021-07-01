@@ -20,7 +20,7 @@ export default class LookupForm extends React.Component {
   
     async handleSubmit(event) {
         event.preventDefault();
-        store.app({id: 553834731}).then(console.log).catch(console.log);
+        store.app({id: this.state.appId}).then(console.log).catch(console.log);
     }
   
     render() {
